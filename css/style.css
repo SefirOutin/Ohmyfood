@@ -23,7 +23,7 @@ a {
 }
 
 h2 {
-  font-size: 40px;
+  font-size: 20px;
   width: 90%;
   margin-left: 20px;
 }
@@ -53,17 +53,17 @@ header a {
 }
 
 header i {
-  font-size: 55px;
+  font-size: 20px;
 }
 
 .loc {
-  background-color: #F2F2F2;
+  background-color: #ebebeb;
   text-align: center;
-  padding: 20px;
+  padding: 5px;
 }
 
 .loc i {
-  font-size: 30px;
+  font-size: 18px;
   position: relative;
   left: 40px;
 }
@@ -73,10 +73,10 @@ header i {
 }
 
 form input {
-  background-color: #F2F2F2;
+  background-color: #ebebeb;
   border: none;
   padding: 10px;
-  font-size: 35px;
+  font-size: 20px;
   position: relative;
   left: 50px;
 }
@@ -92,32 +92,35 @@ form input {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: #F2F2F2;
+  padding: 15px 0px 50px 0px;
 }
 
 .intro h1 {
-  width: 55%;
-  font-size: 50px;
+  width: 70%;
+  font-size: 25px;
   text-align: center;
   font-weight: bold;
   margin-bottom: 0px;
 }
 
 .intro p {
-  font-size: 45px;
+  font-size: 16px;
   text-align: center;
-  width: 75%;
-  margin-top: 10px;
+  width: 80%;
+  margin: 10px 0px 20px 0px;
+  color: gray;
 }
 
 button {
-  font-size: 35px;
+  font-size: 15px;
   background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
   background: linear-gradient(#FF79DA, #9356DC);
   border-radius: 100px;
-  padding: 35px;
+  padding: 15px;
   color: white;
   border: none;
-  width: 47%;
+  width: 55%;
   -webkit-box-shadow: 2px 2px 11px #F2F2F2;
           box-shadow: 2px 2px 11px #F2F2F2;
 }
@@ -133,6 +136,7 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-top: 20px;
 }
 
 .fonctionnement ol {
@@ -143,7 +147,7 @@ button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 30px;
+  gap: 20px;
   padding: 0px;
   width: 85%;
 }
@@ -157,13 +161,13 @@ button {
           align-items: center;
   list-style: none;
   margin: auto;
-  height: 170px;
+  height: 70px;
   background-color: #F2F2F2;
   margin: 0px;
-  -webkit-box-shadow: 0px 10px 10px 0px lightgray;
-          box-shadow: 0px 10px 10px 0px lightgray;
-  border-radius: 40px;
-  gap: 80px;
+  -webkit-box-shadow: 0px 5px 5px 0px lightgray;
+          box-shadow: 0px 5px 5px 0px lightgray;
+  border-radius: 15px;
+  gap: 10px;
 }
 
 .fonctionnement li:active {
@@ -176,7 +180,7 @@ button {
 
 .fonctionnement li i {
   color: gray;
-  font-size: 35px;
+  font-size: 15px;
 }
 
 .fonctionnement li p:first-child {
@@ -191,17 +195,17 @@ button {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
-  right: 20px;
-  font-size: 35px;
-  padding: 20px;
-  width: 20px;
-  height: 20px;
+  right: 13px;
+  font-size: 15px;
+  padding: 7px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   color: white;
 }
 
 .fonctionnement li p:nth-child(3) {
-  font-size: 40px;
+  font-size: 16px;
   font-weight: bold;
 }
 
@@ -216,25 +220,25 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 80px;
-  padding: 50px 0px 100px 0px;
+  gap: 25px;
+  padding: 30px 0px 70px 0px;
   background-color: #F2F2F2;
-  margin-top: 100px;
+  margin-top: 60px;
 }
 
 .restaurants h2 {
   margin-bottom: 0px;
-  font-size: 50px;
+  font-size: 23px;
 }
 
 .nouveau {
   position: absolute;
   background-color: #99E2D0;
-  padding: 10px 20px 10px 20px;
+  padding: 5px 10px 5px 10px;
   color: green;
-  right: 40px;
+  right: 15px;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 12px;
 }
 
 .card {
@@ -246,15 +250,15 @@ button {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 90%;
-  height: 500px;
-  border-radius: 35px;
+  height: 230px;
+  border-radius: 15px;
   -webkit-box-shadow: 2px 5px 10px 2px lightgray;
           box-shadow: 2px 5px 10px 2px lightgray;
   position: relative;
 }
 
 .card__img {
-  height: 75%;
+  height: 70%;
   width: 100%;
 }
 
@@ -263,23 +267,22 @@ button {
      object-fit: cover;
   width: 100%;
   height: 100%;
-  border-radius: 35px 35px 0px 0px;
+  border-radius: 15px 15px 0px 0px;
 }
 
 .card__desc {
   text-decoration: none;
-  height: 25%;
-  font-size: 40px;
-  padding: 25px;
+  height: 30%;
+  font-size: 20px;
   background-color: white;
-  border-radius: 0px 0px 35px 35px;
+  border-radius: 0px 0px 15px 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
 .card__desc > div:first-child {
-  width: 85%;
+  width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -287,15 +290,20 @@ button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 5px;
+  gap: 3px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-left: 10px;
 }
 
 .card__desc > div:first-child h3, .card__desc > div:first-child p {
   margin: 0px;
+  font-size: 17px;
 }
 
 .card__desc > div:last-child {
-  width: auto;
+  width: 20%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -308,8 +316,8 @@ button {
 }
 
 .card__desc > div:last-child i {
-  font-size: 55px;
-  padding: 30px;
+  font-size: 25px;
+  padding: 5px;
 }
 
 .card__desc > div:last-child:active {
@@ -318,18 +326,18 @@ button {
 
 footer {
   background-color: #242526;
-  padding: 50px 0px 20px 40px;
+  padding: 20px 0px 2px 15px;
 }
 
 footer img {
   -webkit-filter: invert(1);
           filter: invert(1);
-  width: 200px;
+  width: 120px;
 }
 
 footer ul {
   padding: 0px;
-  line-height: 40px;
+  line-height: 20px;
 }
 
 footer li {
@@ -341,19 +349,19 @@ footer li {
 
 footer li a {
   color: white;
-  font-size: 30px;
+  font-size: 15px;
 }
 
 footer li i {
-  font-size: 25px;
+  font-size: 10px;
 }
 
 footer li:first-child a {
-  padding-left: 17px;
+  padding-left: 11px;
 }
 
 footer li:nth-child(2) a {
-  padding-left: 8px;
+  padding-left: 7px;
 }
 
 .carte {
@@ -378,27 +386,27 @@ footer li:nth-child(2) a {
 }
 
 .carte .titres__restos i {
-  font-size: 80px;
+  font-size: 25px;
 }
 
 .carte .titres__restos h1 {
   margin: 0px;
-  font-size: 70px;
+  font-size: 25px;
   font-family: "Shrikhand", sans-serif;
   font-weight: lighter;
 }
 
 .carte img {
   width: 100%;
-  height: 720px;
+  height: 280px;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
 .carte section {
-  border-radius: 100px 100px 0px 0px;
+  border-radius: 50px 50px 0px 0px;
   background-color: #F2F2F2;
-  padding: 70px 0px 0px 0px;
+  padding-top: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -410,12 +418,13 @@ footer li:nth-child(2) a {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
-  bottom: 145px;
-  gap: 90px;
+  bottom: 65px;
+  gap: 30px;
 }
 
 .carte button {
   text-align: center;
+  margin: 20px 0px 20px 0px;
 }
 
 .menu {
@@ -429,33 +438,35 @@ footer li:nth-child(2) a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 30px;
+  gap: 12px;
   width: 100%;
 }
 
 .menu h2 {
   font-weight: lighter;
   margin: 0px 0px 0px 20px;
+  font-size: 17px;
 }
 
 .menu hr {
   position: relative;
-  left: 60px;
-  bottom: 15px;
+  left: 29px;
+  bottom: 7px;
   margin: 0px;
-  width: 90px;
+  width: 42px;
   -ms-flex-item-align: start;
       align-self: flex-start;
-  border: 4px solid #99E2D0;
+  border: 1px solid #99E2D0;
+  background-color: #99E2D0;
 }
 
 .menu > div {
-  border-radius: 25px;
+  border-radius: 15px;
   -webkit-box-shadow: 0px 5px 5px 0px lightgray;
           box-shadow: 0px 5px 5px 0px lightgray;
   width: 90%;
-  height: 150px;
-  font-size: 25px;
+  height: 70px;
+  font-size: 20px;
   background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -474,19 +485,19 @@ footer li:nth-child(2) a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-left: 30px;
-  gap: 10px;
+  padding-left: 10px;
+  gap: 5px;
 }
 
 .menu > div div:first-child h3 {
-  font-size: 40px;
+  font-size: 17px;
   margin: 0px;
   text-overflow: ellipsis;
 }
 
 .menu > div div:first-child p {
   margin: 0px;
-  font-size: 35px;
+  font-size: 14px;
   text-overflow: ellipsis;
 }
 
@@ -501,8 +512,8 @@ footer li:nth-child(2) a {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: end;
-  padding: 35px 45px 5px 35px;
-  font-size: 30px;
+  font-size: 15px;
   font-weight: bold;
+  padding-right: 15px;
 }
 /*# sourceMappingURL=style.css.map */
