@@ -160,6 +160,10 @@ button {
       -ms-flex-align: center;
           align-items: center;
   list-style: none;
+<<<<<<< HEAD
+=======
+  margin: auto;
+>>>>>>> acf811b0b761e7db65b4d2c1760592768af82b52
   height: 70px;
   background-color: #F2F2F2;
   margin: 0px;
@@ -257,7 +261,11 @@ button {
 }
 
 .card__img {
+<<<<<<< HEAD
   height: 68%;
+=======
+  height: 70%;
+>>>>>>> acf811b0b761e7db65b4d2c1760592768af82b52
   width: 100%;
 }
 
@@ -271,7 +279,11 @@ button {
 
 .card__desc {
   text-decoration: none;
+<<<<<<< HEAD
   height: 32%;
+=======
+  height: 30%;
+>>>>>>> acf811b0b761e7db65b4d2c1760592768af82b52
   font-size: 20px;
   background-color: white;
   border-radius: 0px 0px 15px 15px;
@@ -443,12 +455,20 @@ footer li:nth-child(2) a {
 
 .menu h2 {
   font-weight: lighter;
+<<<<<<< HEAD
+=======
+  margin: 0px 0px 0px 20px;
+>>>>>>> acf811b0b761e7db65b4d2c1760592768af82b52
   font-size: 17px;
 }
 
 .menu hr {
   position: relative;
+<<<<<<< HEAD
   left: 5%;
+=======
+  left: 29px;
+>>>>>>> acf811b0b761e7db65b4d2c1760592768af82b52
   bottom: 7px;
   margin: 0px;
   width: 42px;
@@ -513,6 +533,7 @@ footer li:nth-child(2) a {
   font-size: 15px;
   font-weight: bold;
   padding-right: 15px;
+<<<<<<< HEAD
 }
 
 @media screen and (min-width: 500px) {
@@ -605,5 +626,7 @@ footer li:nth-child(2) a {
   .menu {
     width: 33%;
   }
+=======
+>>>>>>> acf811b0b761e7db65b4d2c1760592768af82b52
 }
 /*# sourceMappingURL=style.css.map */
