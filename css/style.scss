@@ -6,7 +6,46 @@
     font-family: "Roboto";
     src: url(../font/Roboto-Regular.ttf);
 }
-
+@keyframes heart-anim {
+        0% {
+            transform: scaleY(0);
+        }
+        100% {
+            transform: scaleY(1);
+        }
+}
+@keyframes spin {
+    0% { 
+        transform: rotate(0deg);
+    }
+    100% { 
+        transform: rotate(360deg);
+    }
+}
+@keyframes panier-check {
+    0% {
+        transform: scaleX(0)
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+.container {
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    .loader {
+        border-right: 16px solid #FF79DA;
+        border-top: 16px solid #9356DC;
+        border-bottom: 16px solid #99E2D0;
+        border-left: 16px solid white;
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: spin 2s linear infinite;
+    }
+}
 body {
     font-size: 16px;
     margin: 0px;
@@ -181,69 +220,71 @@ button {
     border-radius: 15px;
     box-shadow: 2px 5px 10px 2px lightgray;
     position: relative;
-}
-.card__img {
-    height: 68%;
-    width: 100%;
-   
-    img {
-       object-fit:cover;
-       width: 100%;
-       height: 100%;
-       border-radius: 15px 15px 0px 0px;
-       }
-}
-.card__desc {
-    text-decoration: none;
-    height: 32%;
-    font-size: 20px;
-    background-color: white;
-    border-radius: 0px 0px 15px 15px;
-    display: flex;
-    > div:first-child {
-        width: 80%;
-        display: flex;
-        flex-direction: column;
-        gap: 3px;
-        justify-content: center;
-        padding-left: 10px;
-        h3, p {
-            margin: 0px;
-            font-size: 17px;
-        }
+    &__img {
+        height: 68%;
+        width: 100%;
+       
+        img {
+           object-fit:cover;
+           width: 100%;
+           height: 100%;
+           border-radius: 15px 15px 0px 0px;
+           }
     }
-    > div:last-child {
-        width: 10%;
+    &__desc {
+        text-decoration: none;
+        height: 32%;
+        font-size: 20px;
+        background-color: white;
+        border-radius: 0px 0px 15px 15px;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        .fa-solid {
-            opacity:0;
-            position: absolute;
-        }
-        .fa-regular {
-            opacity:1;
-            position: absolute;
-        }
-        &:hover {
-            .fa-regular {
-                opacity: 0;
+        > div:first-child {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            justify-content: center;
+            padding-left: 10px;
+            h3, p {
+                margin: 0px;
+                font-size: 17px;
             }
+        }
+        > div:last-child {
+            width: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
             .fa-solid {
-                opacity:1;
-                color: #FF79DA;
-                //background-color: #FF79DA;
-                //background-clip: text;
-                //-webkit-background-clip: text;
+                opacity:0;
+                position: absolute;
             }
-        }
-        i {
-            font-size: 25px;
-            padding: 5px;
+            .fa-regular {
+                opacity:1;
+                position: absolute;
+            }
+            &:hover {
+                .fa-regular {
+                    opacity: 0;
+                }
+                .fa-solid {
+                    opacity:1;
+                    color: #FF79DA;
+                    animation-name: heart-anim;
+                    animation-duration: 250ms;
+                    transform-origin: 50% 100%;
+                }
+            }
+            i {
+                font-size: 25px;
+                padding: 5px;
+            }
         }
     }
 }
+
+
 footer{
     background-color: #242526;
     padding: 20px 0px 2px 15px;
@@ -281,7 +322,7 @@ footer{
 }
 .carte { 
     background-color: #f2f2f2;
-    .titres__restos {
+    &__titre {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -295,6 +336,28 @@ footer{
             font-size: 25px;
             font-family: "Shrikhand", sans-serif;
             font-weight: lighter;
+        }
+        .fa-solid {
+            opacity:0;
+            position: absolute;
+            right: 40px;
+        }
+        .fa-regular {
+            opacity:1;
+            position: absolute;
+            right: 40px;
+        }
+        &:hover {
+            .fa-regular {
+                opacity: 0;
+            }
+            .fa-solid {
+                opacity:1;
+                color: #FF79DA;
+                animation-name: heart-anim;
+                animation-duration: 250ms;
+                transform-origin: 50% 100%;
+            }
         }
     }
     img {
@@ -340,7 +403,7 @@ footer{
         border: 1px solid #99E2D0;
         background-color: #99E2D0;
     }
-    > div {
+    &__case {
         border-radius: 15px;
         box-shadow: 0px 5px 5px 0px lightgray;
         width: 90%;
@@ -348,7 +411,8 @@ footer{
         font-size: 20px;
         background-color: white;
         display: flex;
-        div:first-child {
+        
+        &_texte {
             width: 90%;
             display: flex;
             flex-direction: column;
@@ -366,7 +430,7 @@ footer{
                 text-overflow: ellipsis;
             }
         }
-        div:last-child {
+        &_prix {
             width: 10%;
             display: flex;
             justify-content: end;
@@ -375,6 +439,33 @@ footer{
             font-weight: bold;
             padding-right: 15px;
         }
+        &_panier {
+            background-color: #99E2D0;
+            width: 20%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0px 15px 15px 0px;
+            i {
+                color: #99E2D0;
+                background-color: white;
+                border-radius: 25px;
+                font-size: 16px;
+                padding: 2px 3px;
+            }
+        }
+        &:hover {
+            .menu__case_panier {
+                display: flex;
+                animation-name: panier-check;
+                animation-duration: 1s;
+                transform-origin: 100% 50%;
+            }
+            .menu__case_texte {
+                width: 65%;
+            }
+        }
+       
     }
 }
 
