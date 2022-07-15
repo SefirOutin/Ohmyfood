@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Shrikhand";
   src: url(../font/Shrikhand-Regular.ttf);
@@ -9,6 +10,7 @@
 }
 
 @-webkit-keyframes heart-anim {
+  /*Animations menus préférés*/
   0% {
     -webkit-transform: scaleY(0);
             transform: scaleY(0);
@@ -20,6 +22,7 @@
 }
 
 @keyframes heart-anim {
+  /*Animations menus préférés*/
   0% {
     -webkit-transform: scaleY(0);
             transform: scaleY(0);
@@ -31,6 +34,7 @@
 }
 
 @-webkit-keyframes spin {
+  /* Animation loader*/
   0% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
@@ -42,6 +46,7 @@
 }
 
 @keyframes spin {
+  /* Animation loader*/
   0% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
@@ -53,6 +58,7 @@
 }
 
 @-webkit-keyframes panier-check {
+  /* Animations de l'ajout de plat à la commande */
   0% {
     -webkit-transform: scaleX(0);
             transform: scaleX(0);
@@ -64,6 +70,7 @@
 }
 
 @keyframes panier-check {
+  /* Animations de l'ajout de plat à la commande */
   0% {
     -webkit-transform: scaleX(0);
             transform: scaleX(0);
@@ -74,11 +81,13 @@
   }
 }
 
+/* Page D'accueil */
 .container {
+  /* Loader */
   background-color: white;
   position: absolute;
-  left: 50%;
-  top: 50%;
+  width: 100%;
+  height: 100%;
 }
 
 .container .loader {
@@ -87,8 +96,8 @@
   border-bottom: 16px solid #99E2D0;
   border-left: 16px solid white;
   border-radius: 50%;
-  width: 120px;
-  height: 120px;
+  width: 65px;
+  height: 65px;
   -webkit-animation: spin 2s linear infinite;
           animation: spin 2s linear infinite;
 }
@@ -133,6 +142,7 @@ header img {
 }
 
 header a {
+  /* Bouton retour */
   position: absolute;
   left: 30px;
 }
@@ -142,6 +152,7 @@ header i {
 }
 
 .loc {
+  /* Formulaire de recherche localisation */
   background-color: #ebebeb;
   text-align: center;
   padding: 5px;
@@ -198,6 +209,7 @@ form input {
 }
 
 button {
+  /* Boutons "Commander" */
   font-size: 15px;
   background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
   background: linear-gradient(#FF79DA, #9356DC);
@@ -218,6 +230,7 @@ button:hover {
 }
 
 .fonctionnement {
+  /* Partie fonctionnement de l'appli */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -323,6 +336,7 @@ button:hover {
 }
 
 .nouveau {
+  /* Vignettes "Nouveau" sur les cartes de restaurants */
   position: absolute;
   background-color: #99E2D0;
   padding: 5px 10px 5px 10px;
@@ -333,6 +347,7 @@ button:hover {
 }
 
 .card {
+  /* Cartes de restaurants */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -349,6 +364,7 @@ button:hover {
 }
 
 .card__img {
+  /* Partie image des cartes */
   height: 68%;
   width: 100%;
 }
@@ -362,6 +378,7 @@ button:hover {
 }
 
 .card__desc {
+  /* Partie inférieure des cartes */
   text-decoration: none;
   height: 32%;
   font-size: 20px;
@@ -373,6 +390,7 @@ button:hover {
 }
 
 .card__desc > div:first-child {
+  /* Texte de description */
   width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -394,6 +412,7 @@ button:hover {
 }
 
 .card__desc > div:last-child {
+  /* Bouton "J'aime" */
   width: 10%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -407,7 +426,13 @@ button:hover {
   position: relative;
 }
 
+.card__desc > div:last-child i {
+  font-size: 25px;
+  padding: 5px;
+}
+
 .card__desc > div:last-child .fa-solid {
+  /* Le coeur rose est invisible par défault */
   opacity: 0;
   position: absolute;
 }
@@ -418,10 +443,12 @@ button:hover {
 }
 
 .card__desc > div:last-child:hover .fa-regular {
+  /* Le coeur vide disparait */
   opacity: 0;
 }
 
 .card__desc > div:last-child:hover .fa-solid {
+  /* Le coeur rose apparait */
   opacity: 1;
   color: #FF79DA;
   -webkit-animation-name: heart-anim;
@@ -430,11 +457,6 @@ button:hover {
           animation-duration: 250ms;
   -webkit-transform-origin: 50% 100%;
           transform-origin: 50% 100%;
-}
-
-.card__desc > div:last-child i {
-  font-size: 25px;
-  padding: 5px;
 }
 
 footer {
@@ -477,73 +499,20 @@ footer li:nth-child(2) a {
   padding-left: 7px;
 }
 
+/* Partie Restaurants */
 .carte {
   background-color: #f2f2f2;
 }
 
-.carte__titre {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 90%;
-}
-
-.carte__titre i {
-  font-size: 25px;
-}
-
-.carte__titre h1 {
-  margin: 0px;
-  font-size: 25px;
-  font-family: "Shrikhand", sans-serif;
-  font-weight: lighter;
-}
-
-.carte__titre .fa-solid {
-  opacity: 0;
-  position: absolute;
-  right: 40px;
-}
-
-.carte__titre .fa-regular {
-  opacity: 1;
-  position: absolute;
-  right: 40px;
-}
-
-.carte__titre:hover .fa-regular {
-  opacity: 0;
-}
-
-.carte__titre:hover .fa-solid {
-  opacity: 1;
-  color: #FF79DA;
-  -webkit-animation-name: heart-anim;
-          animation-name: heart-anim;
-  -webkit-animation-duration: 250ms;
-          animation-duration: 250ms;
-  -webkit-transform-origin: 50% 100%;
-          transform-origin: 50% 100%;
-}
-
-.carte img {
+.carte__img {
+  /* Image en fond sur la page de menu */
   width: 100%;
   height: 280px;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.carte section {
+.section {
   border-radius: 50px 50px 0px 0px;
   background-color: #F2F2F2;
   padding-top: 30px;
@@ -560,11 +529,66 @@ footer li:nth-child(2) a {
   position: relative;
   bottom: 65px;
   gap: 30px;
-  -webkit-transition-duration: 3000ms;
-          transition-duration: 3000ms;
 }
 
-.carte button {
+.section__titre {
+  /* Titres de restaurant sur la page de menu */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 90%;
+}
+
+.section__titre h1 {
+  margin: 0px;
+  font-size: 25px;
+  font-family: "Shrikhand", sans-serif;
+  font-weight: lighter;
+}
+
+.section__titre i {
+  font-size: 25px;
+}
+
+.section__titre .fa-solid {
+  /* Le coeur rose est invisble par défault */
+  opacity: 0;
+  position: absolute;
+  right: 40px;
+}
+
+.section__titre .fa-regular {
+  opacity: 1;
+  position: absolute;
+  right: 40px;
+}
+
+.section__titre:hover .fa-regular {
+  opacity: 0;
+}
+
+.section__titre:hover .fa-solid {
+  opacity: 1;
+  color: #FF79DA;
+  -webkit-animation-name: heart-anim;
+          animation-name: heart-anim;
+  -webkit-animation-duration: 250ms;
+          animation-duration: 250ms;
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+}
+
+.section button {
   text-align: center;
   margin: 20px 0px 20px 0px;
 }
@@ -590,6 +614,7 @@ footer li:nth-child(2) a {
 }
 
 .menu hr {
+  /* Sous-lignage */
   position: relative;
   left: 5%;
   bottom: 7px;
@@ -602,6 +627,7 @@ footer li:nth-child(2) a {
 }
 
 .menu__case {
+  /* Cartes contenant les plats */
   border-radius: 15px;
   -webkit-box-shadow: 0px 5px 5px 0px lightgray;
           box-shadow: 0px 5px 5px 0px lightgray;
@@ -615,6 +641,7 @@ footer li:nth-child(2) a {
 }
 
 .menu__case_texte {
+  /* Partie texte des cartes */
   width: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -643,6 +670,7 @@ footer li:nth-child(2) a {
 }
 
 .menu__case_prix {
+  /* Partie prix des cartes */
   width: 10%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -659,6 +687,7 @@ footer li:nth-child(2) a {
 }
 
 .menu__case_panier {
+  /* Petite coche lors de l'ajout de plat à sa commande */
   background-color: #99E2D0;
   width: 20%;
   display: none;
@@ -680,13 +709,14 @@ footer li:nth-child(2) a {
 }
 
 .menu__case:hover .menu__case_panier {
+  /* Lors du clique sur la carte, apparition de la petite coche à droite du plat */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-animation-name: panier-check;
           animation-name: panier-check;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
+  -webkit-animation-duration: 500ms;
+          animation-duration: 500ms;
   -webkit-transform-origin: 100% 50%;
           transform-origin: 100% 50%;
 }
@@ -764,7 +794,7 @@ footer li:nth-child(2) a {
   .restaurants .card {
     width: 23%;
   }
-  .carte section {
+  .section {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -776,7 +806,7 @@ footer li:nth-child(2) a {
             justify-content: center;
     gap: 20px 0px;
   }
-  .carte .titres__restos {
+  .section__titre {
     width: 95%;
   }
   .menu {
