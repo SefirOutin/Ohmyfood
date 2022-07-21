@@ -31,15 +31,38 @@
         transform: scaleX(1);
     }
 }
-
+@keyframes slideIn{
+    0% {
+        transform: translateY(25px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
 /* Page D'accueil */
-
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        z-index: 0;
+        visibility: hidden;
+    }
+}
 
 .container {                                /* Loader */
     background-color: white;
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeOut 3s forwards;
     .loader {
         border-right: 16px solid #FF79DA;
         border-top: 16px solid #9356DC;
@@ -405,6 +428,12 @@ footer{
     align-items: center;
     gap: 12px;
     width: 100%;
+    animation: slideIn 1s 1s both;
+    @for $var from 1 to 4 {
+        .menu__case--#{$var} {
+            animation: slideIn 1.5s calc(1s * #{$var})
+        }
+    }
     h2 {
         font-weight: lighter;
         font-size: 17px;
@@ -428,6 +457,7 @@ footer{
         background-color: white;
         display: flex;
         
+        
         &_texte {           /* Partie texte des cartes */
             width: 90%;
             display: flex;
@@ -439,11 +469,15 @@ footer{
                 font-size: 17px;
                 margin: 0px;
                 text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
             }
             p {
                 margin: 0px;
                 font-size: 14px;
                 text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
             }
         }
         &_prix {            /* Partie prix des cartes */
@@ -468,6 +502,8 @@ footer{
                 border-radius: 25px;
                 font-size: 16px;
                 padding: 2px 3px;
+                transform: rotate(1turn);
+                transition: transform 1s;
             }
         }
         &:hover {
@@ -476,6 +512,9 @@ footer{
                 animation-name: panier-check;
                 animation-duration: 500ms;
                 transform-origin: 100% 50%;
+                i {
+                    transform: rotate(-1turn);
+                }
             }
             .menu__case_texte {
                 width: 65%;
