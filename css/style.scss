@@ -62,7 +62,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: fadeOut 3s forwards;
+    animation: fadeOut 2s forwards;
     .loader {
         border-right: 16px solid #FF79DA;
         border-top: 16px solid #9356DC;
@@ -166,7 +166,7 @@ button {                                /* Boutons "Commander" */
     border: none;
     width: 55%;
     box-shadow: 2px 2px 11px #f2f2f272;
-    &:hover {
+    &:active {
         background: linear-gradient(#FF83DA, #935eDC);
         box-shadow: 4px 4px 15px #dfdfdf;
     }
@@ -431,7 +431,7 @@ footer{
     animation: slideIn 1s 1s both;
     @for $var from 1 to 4 {
         .menu__case--#{$var} {
-            animation: slideIn 1.5s calc(1s * #{$var})
+            animation: slideIn 1s calc(1s * #{$var})
         }
     }
     h2 {
@@ -503,14 +503,14 @@ footer{
                 font-size: 16px;
                 padding: 2px 3px;
                 transform: rotate(1turn);
-                transition: transform 1s;
+                transition: transform 0.5s;
             }
         }
         &:hover {
             .menu__case_panier {        /* Lors du clique sur la carte, apparition de la petite coche à droite du plat */
                 display: flex;
                 animation-name: panier-check;
-                animation-duration: 500ms;
+                animation-duration: 250ms;
                 transform-origin: 100% 50%;
                 i {
                     transform: rotate(-1turn);
