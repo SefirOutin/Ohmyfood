@@ -7,14 +7,7 @@
     src: url(../font/Roboto-Regular.ttf);
 }
 
-@keyframes heart-anim {                     /*Animations menus préférés*/
-        0% {
-            transform: scaleY(0);
-        }
-        100% {
-            transform: scaleY(1);
-        }
-}
+
 @keyframes spin {                           /* Animation loader*/
     0% { 
         transform: rotate(0deg);
@@ -23,26 +16,7 @@
         transform: rotate(360deg);
     }
 }
-@keyframes panier-check {                   /* Animations de l'ajout de plat à la commande */
-    0% {
-        transform: scaleX(0)
-    }
-    100% {
-        transform: scaleX(1);
-    }
-}
-@keyframes slideIn{
-    0% {
-        transform: translateY(25px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0px);
-        opacity: 1;
-    }
-}
-/* Page D'accueil */
-@keyframes fadeOut {
+@keyframes fadeOut {                    /* Animation Loader */
     0% {
         opacity: 1;
     }
@@ -53,6 +27,56 @@
     }
 }
 
+@keyframes heart-anim {                     /*Animation "J'aime*/
+    0% {
+        transform: scaleY(0);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes slideIn{                         /* Animation chargement pages des restaurants */
+    0% {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+
+@keyframes panierCheckIn {                   /* Animation ajout de plat à la commande */
+    0% {
+        transform: scaleX(0)
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+@keyframes panierCheckOut {
+    0% {
+        transform: scaleX(1);
+    }
+    100% {
+        transform: scaleX(0);
+    }
+}
+@keyframes spinCheck {                      /* Animation ajout de plat à la commande */
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+/* Page D'accueil */
+
 .container {                                /* Loader */
     background-color: white;
     position: fixed;
@@ -62,7 +86,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: fadeOut 2s forwards;
+    animation: fadeOut 3s forwards;
     .loader {
         border-right: 16px solid #FF79DA;
         border-top: 16px solid #9356DC;
@@ -166,7 +190,8 @@ button {                                /* Boutons "Commander" */
     border: none;
     width: 55%;
     box-shadow: 2px 2px 11px #f2f2f272;
-    &:active {
+    text-align: center;
+    &:hover {
         background: linear-gradient(#FF83DA, #935eDC);
         box-shadow: 4px 4px 15px #dfdfdf;
     }
@@ -195,7 +220,7 @@ button {                                /* Boutons "Commander" */
         box-shadow: 0px 5px 5px 0px lightgray;
         border-radius: 15px;
         gap: 10px;
-        &:active {
+        &:hover {
             background-color: #ECEBEE;
             i {
                 color: #9356DC;
@@ -310,13 +335,182 @@ button {                                /* Boutons "Commander" */
                 .fa-solid {         /* Le coeur rose apparait */
                     opacity:1;
                     color: #FF79DA;
-                    animation-name: heart-anim;
-                    animation-duration: 250ms;
+                    animation: heart-anim 250ms;
                     transform-origin: 50% 100%;
                 }
             }
         }
     }
+}
+
+
+/* Partie pages restaurants */
+
+
+.carte { 
+    background-color: #f2f2f2;
+    &__img {                /* Image en fond sur la page de menu */
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+    }
+    
+}
+.section {
+    border-radius: 50px 50px 0px 0px;
+    background-color: #F2F2F2;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    bottom: 65px;
+    gap: 30px;
+    &__titre {                      /* Titres de restaurant sur la page de menu */
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
+        h1 {
+            margin: 0px;
+            font-size: 25px;
+            font-family: "Shrikhand", sans-serif;
+            font-weight: lighter;
+        }
+        &--i {
+            position: absolute;
+            right: 40px;
+            width: 25px;
+            height: 25px;
+            i{
+                font-size: 25px;
+            }
+            &:hover {
+                .fa-regular {
+                    opacity: 0;
+                }
+                .fa-solid {
+                    opacity:1;
+                    color: #FF79DA;
+                    animation: heart-anim 250ms;
+                    transform-origin: 50% 100%;
+                }
+            }
+        }
+        .fa-solid {                 /* Le coeur rose est invisble par défault */
+            opacity:0;
+            position: absolute;
+        }
+        .fa-regular {
+            opacity:1;
+            position: absolute;
+        }
+        
+    }
+    button {
+        margin: 20px 0px 20px 0px;
+    }
+}
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+           
+    h2 {
+        font-weight: lighter;
+        font-size: 17px;
+    }
+    hr {                        /* Sous-lignage */
+        position: relative;
+        left: 5%;
+        bottom: 7px;
+        margin: 0px;
+        width: 42px;
+        align-self: flex-start;
+        border: 1px solid #99E2D0;
+        background-color: #99E2D0;
+    }
+    @for $var from 1 to 4 {                     /* Animation chargement page des menus */
+        &--#{$var} {
+            animation: slideIn 2s calc(1s * #{$var}) both;
+        }
+    }
+    &__case {                   /* Cartes contenant les plats */
+        border-radius: 15px;
+        box-shadow: 0px 5px 5px 0px lightgray;
+        width: 90%;
+        height: 70px;
+        font-size: 20px;
+        background-color: white;
+        display: flex;
+        
+        
+        &_texte {           /* Partie texte des cartes */
+            width: 85%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 10px;
+            gap: 5px;
+            h3 {
+                font-size: 17px;
+                margin: 0px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+            p {
+                margin: 0px;
+                font-size: 14px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+        }
+        &_prix {            /* Partie prix des cartes */
+            width: 15%;
+            display: flex;
+            align-items: end;
+            font-size: 15px;
+            font-weight: bold;
+            
+        }
+        &_panier {          /* Petite coche lors de l'ajout de plat à sa commande */
+            background-color: #99E2D0;
+            width: 20%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0px 15px 15px 0px;
+            animation: panierCheckOut 500ms;
+            i {
+                color: #99E2D0;
+                background-color: white;
+                border-radius: 25px;
+                font-size: 16px;
+                padding: 2px 3px;
+                
+            }
+        }
+        &:hover {
+            .menu__case_panier {        /* Lors du clique sur la carte, apparition de la petite coche à droite du plat */
+                display: flex;
+                animation: panierCheckIn 500ms;
+                transform-origin: right;
+                i {
+                    animation: spinCheck 500ms;
+                }
+            }
+            .menu__case_texte {
+                width: 65%;
+            }
+        }
+        
+    }
+    
 }
 
 
@@ -355,176 +549,6 @@ footer{
         }
     } 
 }
-
-
-/* Partie Restaurants */
-
-
-.carte { 
-    background-color: #f2f2f2;
-    &__img {                /* Image en fond sur la page de menu */
-        width: 100%;
-        height: 280px;
-        object-fit: cover;
-    }
-    
-}
-.section {
-    border-radius: 50px 50px 0px 0px;
-    background-color: #F2F2F2;
-    padding-top: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    bottom: 65px;
-    gap: 30px;
-    &__titre {                      /* Titres de restaurant sur la page de menu */
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        width: 90%;
-        h1 {
-            margin: 0px;
-            font-size: 25px;
-            font-family: "Shrikhand", sans-serif;
-            font-weight: lighter;
-        }
-        i {
-            font-size: 25px;
-        }
-        .fa-solid {                 /* Le coeur rose est invisble par défault */
-            opacity:0;
-            position: absolute;
-            right: 40px;
-        }
-        .fa-regular {
-            opacity:1;
-            position: absolute;
-            right: 40px;
-        }
-        &:hover {
-            .fa-regular {
-                opacity: 0;
-            }
-            .fa-solid {
-                opacity:1;
-                color: #FF79DA;
-                animation-name: heart-anim;
-                animation-duration: 250ms;
-                transform-origin: 50% 100%;
-            }
-        }
-    }
-    button {
-        text-align: center;
-        margin: 20px 0px 20px 0px;
-    }
-}
-.menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    width: 100%;
-    animation: slideIn 1s 1s both;
-    @for $var from 1 to 4 {
-        .menu__case--#{$var} {
-            animation: slideIn 1s calc(1s * #{$var})
-        }
-    }
-    h2 {
-        font-weight: lighter;
-        font-size: 17px;
-    }
-    hr {                        /* Sous-lignage */
-        position: relative;
-        left: 5%;
-        bottom: 7px;
-        margin: 0px;
-        width: 42px;
-        align-self: flex-start;
-        border: 1px solid #99E2D0;
-        background-color: #99E2D0;
-    }
-    &__case {                   /* Cartes contenant les plats */
-        border-radius: 15px;
-        box-shadow: 0px 5px 5px 0px lightgray;
-        width: 90%;
-        height: 70px;
-        font-size: 20px;
-        background-color: white;
-        display: flex;
-        
-        
-        &_texte {           /* Partie texte des cartes */
-            width: 90%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding-left: 10px;
-            gap: 5px;
-            h3 {
-                font-size: 17px;
-                margin: 0px;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                white-space: nowrap;
-            }
-            p {
-                margin: 0px;
-                font-size: 14px;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                white-space: nowrap;
-            }
-        }
-        &_prix {            /* Partie prix des cartes */
-            width: 10%;
-            display: flex;
-            justify-content: end;
-            align-items: end;
-            font-size: 15px;
-            font-weight: bold;
-            padding-right: 15px;
-        }
-        &_panier {          /* Petite coche lors de l'ajout de plat à sa commande */
-            background-color: #99E2D0;
-            width: 20%;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            border-radius: 0px 15px 15px 0px;
-            i {
-                color: #99E2D0;
-                background-color: white;
-                border-radius: 25px;
-                font-size: 16px;
-                padding: 2px 3px;
-                transform: rotate(1turn);
-                transition: transform 0.5s;
-            }
-        }
-        &:hover {
-            .menu__case_panier {        /* Lors du clique sur la carte, apparition de la petite coche à droite du plat */
-                display: flex;
-                animation-name: panier-check;
-                animation-duration: 250ms;
-                transform-origin: 100% 50%;
-                i {
-                    transform: rotate(-1turn);
-                }
-            }
-            .menu__case_texte {
-                width: 65%;
-            }
-        }
-       
-    }
-}
-
-
 
 @media screen and (min-width: 500px) {
     header img {
@@ -567,7 +591,7 @@ footer{
     
 }
 @media screen and (min-width: 1000px) {
-    
+
     .restaurants {
         padding: 30px 2% 70px;
         .card {

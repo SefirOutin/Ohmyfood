@@ -9,30 +9,6 @@
   src: url(../font/Roboto-Regular.ttf);
 }
 
-@-webkit-keyframes heart-anim {
-  /*Animations menus préférés*/
-  0% {
-    -webkit-transform: scaleY(0);
-            transform: scaleY(0);
-  }
-  100% {
-    -webkit-transform: scaleY(1);
-            transform: scaleY(1);
-  }
-}
-
-@keyframes heart-anim {
-  /*Animations menus préférés*/
-  0% {
-    -webkit-transform: scaleY(0);
-            transform: scaleY(0);
-  }
-  100% {
-    -webkit-transform: scaleY(1);
-            transform: scaleY(1);
-  }
-}
-
 @-webkit-keyframes spin {
   /* Animation loader*/
   0% {
@@ -57,78 +33,153 @@
   }
 }
 
-@-webkit-keyframes panier-check {
-  /* Animations de l'ajout de plat à la commande */
+@-webkit-keyframes fadeOut {
+  /* Animation Loader */
   0% {
-    -webkit-transform: scaleX(0);
-            transform: scaleX(0);
+    opacity: 1;
   }
   100% {
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1);
+    opacity: 0;
+    z-index: 0;
+    visibility: hidden;
   }
 }
 
-@keyframes panier-check {
-  /* Animations de l'ajout de plat à la commande */
+@keyframes fadeOut {
+  /* Animation Loader */
   0% {
-    -webkit-transform: scaleX(0);
-            transform: scaleX(0);
+    opacity: 1;
   }
   100% {
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1);
+    opacity: 0;
+    z-index: 0;
+    visibility: hidden;
+  }
+}
+
+@-webkit-keyframes heart-anim {
+  /*Animation "J'aime*/
+  0% {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+}
+
+@keyframes heart-anim {
+  /*Animation "J'aime*/
+  0% {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
   }
 }
 
 @-webkit-keyframes slideIn {
+  /* Animation chargement pages des restaurants */
   0% {
+    opacity: 0;
     -webkit-transform: translateY(25px);
             transform: translateY(25px);
-    opacity: 0;
   }
   100% {
+    opacity: 1;
     -webkit-transform: translateY(0px);
             transform: translateY(0px);
-    opacity: 1;
   }
 }
 
 @keyframes slideIn {
+  /* Animation chargement pages des restaurants */
   0% {
+    opacity: 0;
     -webkit-transform: translateY(25px);
             transform: translateY(25px);
-    opacity: 0;
   }
   100% {
+    opacity: 1;
     -webkit-transform: translateY(0px);
             transform: translateY(0px);
-    opacity: 1;
+  }
+}
+
+@-webkit-keyframes panierCheckIn {
+  /* Animation ajout de plat à la commande */
+  0% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}
+
+@keyframes panierCheckIn {
+  /* Animation ajout de plat à la commande */
+  0% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}
+
+@-webkit-keyframes panierCheckOut {
+  0% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+  100% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+}
+
+@keyframes panierCheckOut {
+  0% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+  100% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+}
+
+@-webkit-keyframes spinCheck {
+  /* Animation ajout de plat à la commande */
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spinCheck {
+  /* Animation ajout de plat à la commande */
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
 /* Page D'accueil */
-@-webkit-keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    z-index: 0;
-    visibility: hidden;
-  }
-}
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    z-index: 0;
-    visibility: hidden;
-  }
-}
-
 .container {
   /* Loader */
   background-color: white;
@@ -145,8 +196,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-animation: fadeOut 2s forwards;
-          animation: fadeOut 2s forwards;
+  -webkit-animation: fadeOut 3s forwards;
+          animation: fadeOut 3s forwards;
 }
 
 .container .loader {
@@ -279,9 +330,10 @@ button {
   width: 55%;
   -webkit-box-shadow: 2px 2px 11px #f2f2f272;
           box-shadow: 2px 2px 11px #f2f2f272;
+  text-align: center;
 }
 
-button:active {
+button:hover {
   background: -webkit-gradient(linear, left top, left bottom, from(#FF83DA), to(#935eDC));
   background: linear-gradient(#FF83DA, #935eDC);
   -webkit-box-shadow: 4px 4px 15px #dfdfdf;
@@ -333,11 +385,11 @@ button:active {
   gap: 10px;
 }
 
-.fonctionnement li:active {
+.fonctionnement li:hover {
   background-color: #ECEBEE;
 }
 
-.fonctionnement li:active i {
+.fonctionnement li:hover i {
   color: #9356DC;
 }
 
@@ -510,55 +562,13 @@ button:active {
   /* Le coeur rose apparait */
   opacity: 1;
   color: #FF79DA;
-  -webkit-animation-name: heart-anim;
-          animation-name: heart-anim;
-  -webkit-animation-duration: 250ms;
-          animation-duration: 250ms;
+  -webkit-animation: heart-anim 250ms;
+          animation: heart-anim 250ms;
   -webkit-transform-origin: 50% 100%;
           transform-origin: 50% 100%;
 }
 
-footer {
-  background-color: #242526;
-  padding: 20px 0px 2px 15px;
-}
-
-footer img {
-  -webkit-filter: invert(1);
-          filter: invert(1);
-  width: 120px;
-}
-
-footer ul {
-  padding: 0px;
-  line-height: 20px;
-}
-
-footer li {
-  list-style: none;
-  text-decoration: none;
-  color: white;
-  margin-bottom: 5px;
-}
-
-footer li a {
-  color: white;
-  font-size: 15px;
-}
-
-footer li i {
-  font-size: 10px;
-}
-
-footer li:first-child a {
-  padding-left: 11px;
-}
-
-footer li:nth-child(2) a {
-  padding-left: 7px;
-}
-
-/* Partie Restaurants */
+/* Partie pages restaurants */
 .carte {
   background-color: #f2f2f2;
 }
@@ -615,40 +625,42 @@ footer li:nth-child(2) a {
   font-weight: lighter;
 }
 
-.section__titre i {
+.section__titre--i {
+  position: absolute;
+  right: 40px;
+  width: 25px;
+  height: 25px;
+}
+
+.section__titre--i i {
   font-size: 25px;
+}
+
+.section__titre--i:hover .fa-regular {
+  opacity: 0;
+}
+
+.section__titre--i:hover .fa-solid {
+  opacity: 1;
+  color: #FF79DA;
+  -webkit-animation: heart-anim 250ms;
+          animation: heart-anim 250ms;
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
 }
 
 .section__titre .fa-solid {
   /* Le coeur rose est invisble par défault */
   opacity: 0;
   position: absolute;
-  right: 40px;
 }
 
 .section__titre .fa-regular {
   opacity: 1;
   position: absolute;
-  right: 40px;
-}
-
-.section__titre:hover .fa-regular {
-  opacity: 0;
-}
-
-.section__titre:hover .fa-solid {
-  opacity: 1;
-  color: #FF79DA;
-  -webkit-animation-name: heart-anim;
-          animation-name: heart-anim;
-  -webkit-animation-duration: 250ms;
-          animation-duration: 250ms;
-  -webkit-transform-origin: 50% 100%;
-          transform-origin: 50% 100%;
 }
 
 .section button {
-  text-align: center;
   margin: 20px 0px 20px 0px;
 }
 
@@ -665,23 +677,9 @@ footer li:nth-child(2) a {
           align-items: center;
   gap: 12px;
   width: 100%;
-  -webkit-animation: slideIn 1s 1s both;
-          animation: slideIn 1s 1s both;
-}
-
-.menu .menu__case--1 {
-  -webkit-animation: slideIn 1s calc(1s * 1);
-          animation: slideIn 1s calc(1s * 1);
-}
-
-.menu .menu__case--2 {
-  -webkit-animation: slideIn 1s calc(1s * 2);
-          animation: slideIn 1s calc(1s * 2);
-}
-
-.menu .menu__case--3 {
-  -webkit-animation: slideIn 1s calc(1s * 3);
-          animation: slideIn 1s calc(1s * 3);
+  /* Animation chargement page des menus */
+  /* Animation chargement page des menus */
+  /* Animation chargement page des menus */
 }
 
 .menu h2 {
@@ -702,6 +700,21 @@ footer li:nth-child(2) a {
   background-color: #99E2D0;
 }
 
+.menu--1 {
+  -webkit-animation: slideIn 2s calc(1s * 1) both;
+          animation: slideIn 2s calc(1s * 1) both;
+}
+
+.menu--2 {
+  -webkit-animation: slideIn 2s calc(1s * 2) both;
+          animation: slideIn 2s calc(1s * 2) both;
+}
+
+.menu--3 {
+  -webkit-animation: slideIn 2s calc(1s * 3) both;
+          animation: slideIn 2s calc(1s * 3) both;
+}
+
 .menu__case {
   /* Cartes contenant les plats */
   border-radius: 15px;
@@ -718,7 +731,7 @@ footer li:nth-child(2) a {
 
 .menu__case_texte {
   /* Partie texte des cartes */
-  width: 90%;
+  width: 85%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -751,19 +764,15 @@ footer li:nth-child(2) a {
 
 .menu__case_prix {
   /* Partie prix des cartes */
-  width: 10%;
+  width: 15%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: end;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: end;
   font-size: 15px;
   font-weight: bold;
-  padding-right: 15px;
 }
 
 .menu__case_panier {
@@ -778,6 +787,8 @@ footer li:nth-child(2) a {
       -ms-flex-pack: center;
           justify-content: center;
   border-radius: 0px 15px 15px 0px;
+  -webkit-animation: panierCheckOut 500ms;
+          animation: panierCheckOut 500ms;
 }
 
 .menu__case_panier i {
@@ -786,12 +797,6 @@ footer li:nth-child(2) a {
   border-radius: 25px;
   font-size: 16px;
   padding: 2px 3px;
-  -webkit-transform: rotate(1turn);
-          transform: rotate(1turn);
-  -webkit-transition: -webkit-transform 0.5s;
-  transition: -webkit-transform 0.5s;
-  transition: transform 0.5s;
-  transition: transform 0.5s, -webkit-transform 0.5s;
 }
 
 .menu__case:hover .menu__case_panier {
@@ -799,21 +804,59 @@ footer li:nth-child(2) a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-animation-name: panier-check;
-          animation-name: panier-check;
-  -webkit-animation-duration: 250ms;
-          animation-duration: 250ms;
-  -webkit-transform-origin: 100% 50%;
-          transform-origin: 100% 50%;
+  -webkit-animation: panierCheckIn 500ms;
+          animation: panierCheckIn 500ms;
+  -webkit-transform-origin: right;
+          transform-origin: right;
 }
 
 .menu__case:hover .menu__case_panier i {
-  -webkit-transform: rotate(-1turn);
-          transform: rotate(-1turn);
+  -webkit-animation: spinCheck 500ms;
+          animation: spinCheck 500ms;
 }
 
 .menu__case:hover .menu__case_texte {
   width: 65%;
+}
+
+footer {
+  background-color: #242526;
+  padding: 20px 0px 2px 15px;
+}
+
+footer img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+  width: 120px;
+}
+
+footer ul {
+  padding: 0px;
+  line-height: 20px;
+}
+
+footer li {
+  list-style: none;
+  text-decoration: none;
+  color: white;
+  margin-bottom: 5px;
+}
+
+footer li a {
+  color: white;
+  font-size: 15px;
+}
+
+footer li i {
+  font-size: 10px;
+}
+
+footer li:first-child a {
+  padding-left: 11px;
+}
+
+footer li:nth-child(2) a {
+  padding-left: 7px;
 }
 
 @media screen and (min-width: 500px) {
