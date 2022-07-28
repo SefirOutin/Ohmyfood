@@ -109,7 +109,7 @@
   }
 }
 
-@-webkit-keyframes panierCheckIn {
+@-webkit-keyframes panierCheck {
   /* Animation ajout de plat à la commande */
   0% {
     -webkit-transform: scaleX(0);
@@ -121,7 +121,7 @@
   }
 }
 
-@keyframes panierCheckIn {
+@keyframes panierCheck {
   /* Animation ajout de plat à la commande */
   0% {
     -webkit-transform: scaleX(0);
@@ -130,28 +130,6 @@
   100% {
     -webkit-transform: scaleX(1);
             transform: scaleX(1);
-  }
-}
-
-@-webkit-keyframes panierCheckOut {
-  0% {
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1);
-  }
-  100% {
-    -webkit-transform: scaleX(0);
-            transform: scaleX(0);
-  }
-}
-
-@keyframes panierCheckOut {
-  0% {
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1);
-  }
-  100% {
-    -webkit-transform: scaleX(0);
-            transform: scaleX(0);
   }
 }
 
@@ -338,6 +316,7 @@ button:hover {
   background: linear-gradient(#FF83DA, #935eDC);
   -webkit-box-shadow: 4px 4px 15px #dfdfdf;
           box-shadow: 4px 4px 15px #dfdfdf;
+  cursor: pointer;
 }
 
 .fonctionnement {
@@ -387,6 +366,7 @@ button:hover {
 
 .fonctionnement li:hover {
   background-color: #ECEBEE;
+  cursor: pointer;
 }
 
 .fonctionnement li:hover i {
@@ -474,6 +454,10 @@ button:hover {
   position: relative;
 }
 
+.card:hover {
+  cursor: pointer;
+}
+
 .card__img {
   /* Partie image des cartes */
   height: 68%;
@@ -500,7 +484,7 @@ button:hover {
   display: flex;
 }
 
-.card__desc > div:first-child {
+.card__desc > a {
   /* Texte de description */
   width: 80%;
   display: -webkit-box;
@@ -517,12 +501,12 @@ button:hover {
   padding-left: 10px;
 }
 
-.card__desc > div:first-child h3, .card__desc > div:first-child p {
+.card__desc > a h3, .card__desc > a p {
   margin: 0px;
   font-size: 17px;
 }
 
-.card__desc > div:last-child {
+.card__desc > div {
   /* Bouton "J'aime" */
   width: 10%;
   display: -webkit-box;
@@ -537,28 +521,28 @@ button:hover {
   position: relative;
 }
 
-.card__desc > div:last-child i {
+.card__desc > div i {
   font-size: 25px;
   padding: 5px;
 }
 
-.card__desc > div:last-child .fa-solid {
+.card__desc > div .fa-solid {
   /* Le coeur rose est invisible par défault */
   opacity: 0;
   position: absolute;
 }
 
-.card__desc > div:last-child .fa-regular {
+.card__desc > div .fa-regular {
   opacity: 1;
   position: absolute;
 }
 
-.card__desc > div:last-child:hover .fa-regular {
+.card__desc > div:hover .fa-regular {
   /* Le coeur vide disparait */
   opacity: 0;
 }
 
-.card__desc > div:last-child:hover .fa-solid {
+.card__desc > div:hover .fa-solid {
   /* Le coeur rose apparait */
   opacity: 1;
   color: #FF79DA;
@@ -636,6 +620,10 @@ button:hover {
   font-size: 25px;
 }
 
+.section__titre--i:hover {
+  cursor: pointer;
+}
+
 .section__titre--i:hover .fa-regular {
   opacity: 0;
 }
@@ -661,7 +649,7 @@ button:hover {
 }
 
 .section button {
-  margin: 20px 0px 20px 0px;
+  margin: 20px 20%;
 }
 
 .menu {
@@ -727,6 +715,7 @@ button:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  overflow: hidden;
 }
 
 .menu__case_texte {
@@ -779,7 +768,9 @@ button:hover {
   /* Petite coche lors de l'ajout de plat à sa commande */
   background-color: #99E2D0;
   width: 20%;
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -787,8 +778,9 @@ button:hover {
       -ms-flex-pack: center;
           justify-content: center;
   border-radius: 0px 15px 15px 0px;
-  -webkit-animation: panierCheckOut 500ms;
-          animation: panierCheckOut 500ms;
+  margin-right: -140px;
+  -webkit-transition: margin 1s;
+  transition: margin 1s;
 }
 
 .menu__case_panier i {
@@ -799,15 +791,20 @@ button:hover {
   padding: 2px 3px;
 }
 
+.menu__case:hover {
+  cursor: pointer;
+}
+
 .menu__case:hover .menu__case_panier {
   /* Lors du clique sur la carte, apparition de la petite coche à droite du plat */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-animation: panierCheckIn 500ms;
-          animation: panierCheckIn 500ms;
-  -webkit-transform-origin: right;
-          transform-origin: right;
+  margin-right: 0px;
+  -webkit-animation: panierCheck 500ms;
+          animation: panierCheck 500ms;
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
 }
 
 .menu__case:hover .menu__case_panier i {
@@ -866,23 +863,6 @@ footer li:nth-child(2) a {
   button {
     width: 250px;
   }
-  .restaurants {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  .restaurants h2 {
-    padding: 0px 2%;
-  }
-  .restaurants .card {
-    width: 45%;
-  }
   .fonctionnement {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -894,6 +874,7 @@ footer li:nth-child(2) a {
         -ms-flex-pack: center;
             justify-content: center;
     padding: 30px 2%;
+    gap: 20px;
   }
   .fonctionnement h2 {
     width: 100%;
@@ -919,15 +900,27 @@ footer li:nth-child(2) a {
   .fonctionnement ol li {
     padding: 0px 15px 0px 0px;
   }
-}
-
-@media screen and (min-width: 1000px) {
   .restaurants {
-    padding: 30px 2% 70px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 20px;
+  }
+  .restaurants h2 {
+    padding: 0px 2%;
   }
   .restaurants .card {
-    width: 23%;
+    width: 45%;
   }
+}
+
+@media screen and (min-width: 768px) {
   .section {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -938,10 +931,21 @@ footer li:nth-child(2) a {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    gap: 20px 0px;
   }
-  .section__titre {
-    width: 95%;
+  .menu {
+    width: 48%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .restaurants {
+    padding: 30px 2% 70px;
+  }
+  .restaurants .card {
+    width: 23%;
+  }
+  .section {
+    gap: 30px 0px;
   }
   .menu {
     width: 33%;

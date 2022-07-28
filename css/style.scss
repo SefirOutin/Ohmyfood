@@ -48,7 +48,7 @@
 }
 
 
-@keyframes panierCheckIn {                   /* Animation ajout de plat à la commande */
+@keyframes panierCheck {                   /* Animation ajout de plat à la commande */
     0% {
         transform: scaleX(0)
     }
@@ -56,14 +56,7 @@
         transform: scaleX(1);
     }
 }
-@keyframes panierCheckOut {
-    0% {
-        transform: scaleX(1);
-    }
-    100% {
-        transform: scaleX(0);
-    }
-}
+
 @keyframes spinCheck {                      /* Animation ajout de plat à la commande */
     0% {
         transform: rotate(0deg);
@@ -194,6 +187,7 @@ button {                                /* Boutons "Commander" */
     &:hover {
         background: linear-gradient(#FF83DA, #935eDC);
         box-shadow: 4px 4px 15px #dfdfdf;
+        cursor: pointer;
     }
 }
 
@@ -222,6 +216,7 @@ button {                                /* Boutons "Commander" */
         gap: 10px;
         &:hover {
             background-color: #ECEBEE;
+            cursor: pointer;
             i {
                 color: #9356DC;
             }
@@ -280,6 +275,9 @@ button {                                /* Boutons "Commander" */
     border-radius: 15px;
     box-shadow: 2px 5px 10px 2px lightgray;
     position: relative;
+    &:hover {
+        cursor: pointer;
+    }
     &__img {                        /* Partie image des cartes */
         height: 68%;
         width: 100%;
@@ -298,7 +296,7 @@ button {                                /* Boutons "Commander" */
         background-color: white;
         border-radius: 0px 0px 15px 15px;
         display: flex;
-        > div:first-child {             /* Texte de description */
+        > a {             /* Texte de description */
             width: 80%;
             display: flex;
             flex-direction: column;
@@ -310,7 +308,7 @@ button {                                /* Boutons "Commander" */
                 font-size: 17px;
             }
         }
-        > div:last-child {              /* Bouton "J'aime" */
+        > div {              /* Bouton "J'aime" */
             width: 10%;
             display: flex;
             justify-content: center;
@@ -387,6 +385,7 @@ button {                                /* Boutons "Commander" */
                 font-size: 25px;
             }
             &:hover {
+                cursor: pointer;
                 .fa-regular {
                     opacity: 0;
                 }
@@ -409,7 +408,7 @@ button {                                /* Boutons "Commander" */
         
     }
     button {
-        margin: 20px 0px 20px 0px;
+        margin: 20px 20%;
     }
 }
 .menu {
@@ -446,6 +445,7 @@ button {                                /* Boutons "Commander" */
         font-size: 20px;
         background-color: white;
         display: flex;
+        overflow: hidden;
         
         
         &_texte {           /* Partie texte des cartes */
@@ -481,11 +481,13 @@ button {                                /* Boutons "Commander" */
         &_panier {          /* Petite coche lors de l'ajout de plat à sa commande */
             background-color: #99E2D0;
             width: 20%;
-            display: none;
+            display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 0px 15px 15px 0px;
-            animation: panierCheckOut 500ms;
+            margin-right: -140px;
+            transition: margin 1s;
+            
             i {
                 color: #99E2D0;
                 background-color: white;
@@ -496,10 +498,14 @@ button {                                /* Boutons "Commander" */
             }
         }
         &:hover {
+            cursor: pointer;
             .menu__case_panier {        /* Lors du clique sur la carte, apparition de la petite coche à droite du plat */
                 display: flex;
-                animation: panierCheckIn 500ms;
-                transform-origin: right;
+                margin-right: 0px;
+                animation: panierCheck 500ms;
+                transform-origin: 100% 50%;
+
+
                 i {
                     animation: spinCheck 500ms;
                 }
@@ -557,22 +563,12 @@ footer{
     button {
         width: 250px;
     }
-    .restaurants {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        h2 {
-            padding: 0px 2%;
-        }
-        .card {
-            width: 45%;
-        }
-    }
     .fonctionnement {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
         padding: 30px 2%;
+        gap: 20px;
         h2 {
             width: 100%;
         }
@@ -588,6 +584,29 @@ footer{
             }
         }
     }
+    .restaurants {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+        h2 {
+            padding: 0px 2%;
+        }
+        .card {
+            width: 45%;
+        }
+    }
+}
+@media screen and (min-width: 768px) {
+    .section {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        
+    }
+    .menu {
+        width: 48%;
+    }
     
 }
 @media screen and (min-width: 1000px) {
@@ -599,13 +618,7 @@ footer{
         }
     }
     .section {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px 0px;
-        &__titre {
-            width: 95%;
-        }
+        gap: 30px 0px;
     }
     
     .menu {
