@@ -610,7 +610,9 @@ footer{
     
 }
 @media screen and (min-width: 1000px) {
-
+    header img {
+        width: 25%;
+    }
     .restaurants {
         padding: 30px 2% 70px;
         .card {
