@@ -159,15 +159,7 @@
 
 @media screen and (max-width: 167px) {
   #too {
-    font-size: 5px;
-    text-overflow: ellipsis;
-  }
-  .fonctionnement ol li {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-  .fonctionnement ol li p {
-    margin: 0px;
+    font-size: 10px;
   }
 }
 
