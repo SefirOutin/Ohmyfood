@@ -157,6 +157,20 @@
   }
 }
 
+@media screen and (max-width: 167px) {
+  #too {
+    font-size: 5px;
+    text-overflow: ellipsis;
+  }
+  .fonctionnement ol li {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .fonctionnement ol li p {
+    margin: 0px;
+  }
+}
+
 /* Page D'accueil */
 .container {
   /* Loader */
@@ -242,27 +256,44 @@ header i {
 .loc {
   /* Formulaire de recherche localisation */
   background-color: #ebebeb;
-  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 5px;
 }
 
 .loc i {
   font-size: 18px;
-  position: relative;
   left: 40px;
 }
 
 .loc form {
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 form input {
   background-color: #ebebeb;
   border: none;
-  padding: 10px;
+  padding: 10px 0px 10px 10px;
   font-size: 20px;
-  position: relative;
+  width: 70%;
   left: 50px;
+  text-overflow: ellipsis;
 }
 
 .intro {
@@ -347,7 +378,7 @@ button:hover {
   width: 85%;
 }
 
-.fonctionnement li {
+.fonctionnement ol li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -361,24 +392,25 @@ button:hover {
   -webkit-box-shadow: 0px 5px 5px 0px lightgray;
           box-shadow: 0px 5px 5px 0px lightgray;
   border-radius: 15px;
-  gap: 10px;
+  gap: 20px;
+  text-overflow: ellipsis;
 }
 
-.fonctionnement li:hover {
+.fonctionnement ol li:hover {
   background-color: #ECEBEE;
   cursor: pointer;
 }
 
-.fonctionnement li:hover i {
+.fonctionnement ol li:hover i {
   color: #9356DC;
 }
 
-.fonctionnement li i {
+.fonctionnement ol li i {
   color: gray;
   font-size: 15px;
 }
 
-.fonctionnement li p:first-child {
+.fonctionnement ol li p:first-child {
   background-color: #9356DC;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -399,7 +431,7 @@ button:hover {
   color: white;
 }
 
-.fonctionnement li p:nth-child(3) {
+.fonctionnement ol li p:nth-child(3) {
   font-size: 16px;
   font-weight: bold;
 }
@@ -537,11 +569,6 @@ button:hover {
   position: absolute;
 }
 
-.card__desc > div:hover .fa-regular {
-  /* Le coeur vide disparait */
-  opacity: 0;
-}
-
 .card__desc > div:hover .fa-solid {
   /* Le coeur rose apparait */
   opacity: 1;
@@ -622,10 +649,6 @@ button:hover {
 
 .section__titre--i:hover {
   cursor: pointer;
-}
-
-.section__titre--i:hover .fa-regular {
-  opacity: 0;
 }
 
 .section__titre--i:hover .fa-solid {
@@ -721,6 +744,8 @@ button:hover {
 .menu__case_texte {
   /* Partie texte des cartes */
   width: 85%;
+  -webkit-transition: width 500ms;
+  transition: width 500ms;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -797,9 +822,6 @@ button:hover {
 
 .menu__case:hover .menu__case_panier {
   /* Lors du clique sur la carte, apparition de la petite coche à droite du plat */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   margin-right: 0px;
   -webkit-animation: panierCheck 500ms;
           animation: panierCheck 500ms;
@@ -824,7 +846,7 @@ footer {
 footer img {
   -webkit-filter: invert(1);
           filter: invert(1);
-  width: 120px;
+  width: 27%;
 }
 
 footer ul {
@@ -864,12 +886,12 @@ footer li:nth-child(2) a {
     width: 250px;
   }
   .fonctionnement {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -880,25 +902,27 @@ footer li:nth-child(2) a {
     width: 100%;
   }
   .fonctionnement ol {
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    gap: 20px 30px;
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    gap: 20px 30px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
   }
   .fonctionnement ol li {
-    padding: 0px 15px 0px 0px;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    padding-right: 15px;
   }
   .restaurants {
     -webkit-box-orient: horizontal;
@@ -917,6 +941,9 @@ footer li:nth-child(2) a {
   }
   .restaurants .card {
     width: 45%;
+  }
+  footer img {
+    width: 120px;
   }
 }
 
