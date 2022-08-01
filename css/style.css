@@ -158,7 +158,13 @@
 }
 
 @media screen and (max-width: 167px) {
-  #too {
+  body section .too {
+    font-size: 10px;
+  }
+  .fonctionnement ol li p:first-child {
+    font-size: 10px;
+  }
+  .fonctionnement ol li p:nth-child(3) {
     font-size: 10px;
   }
 }
@@ -402,6 +408,11 @@ button:hover {
   font-size: 15px;
 }
 
+.fonctionnement ol li p {
+  font-size: 16px;
+  font-weight: bold;
+}
+
 .fonctionnement ol li p:first-child {
   background-color: #9356DC;
   display: -webkit-box;
@@ -415,17 +426,11 @@ button:hover {
           align-items: center;
   position: relative;
   right: 13px;
-  font-size: 15px;
   padding: 7px;
   width: 10px;
   height: 10px;
   border-radius: 50%;
   color: white;
-}
-
-.fonctionnement ol li p:nth-child(3) {
-  font-size: 16px;
-  font-weight: bold;
 }
 
 .restaurants {
@@ -523,11 +528,11 @@ button:hover {
       -ms-flex-pack: center;
           justify-content: center;
   padding-left: 10px;
+  font-size: 17px;
 }
 
 .card__desc > a h3, .card__desc > a p {
   margin: 0px;
-  font-size: 17px;
 }
 
 .card__desc > div {
@@ -547,7 +552,6 @@ button:hover {
 
 .card__desc > div i {
   font-size: 25px;
-  padding: 5px;
 }
 
 .card__desc > div .fa-solid {

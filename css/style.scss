@@ -68,10 +68,16 @@
 
 
 @media screen and (max-width: 167px) {
-    #too {
+    body section .too {
         font-size: 10px;
     }
-    
+    .fonctionnement ol li p:first-child {
+        font-size: 10px;
+    }
+    .fonctionnement ol li p:nth-child(3)  {
+        font-size: 10px;
+    }
+
 }
 /* Page D'accueil */
 
@@ -217,7 +223,6 @@ button {                                /* Boutons "Commander" */
         li {
             display: flex;
             align-items: center;
-            //flex-wrap: wrap;
             list-style: none;
             height: 70px;
             background-color: #F2F2F2;
@@ -237,6 +242,10 @@ button {                                /* Boutons "Commander" */
                 color: gray;
                 font-size: 15px;
             }
+            p {
+                font-size: 16px;
+                font-weight: bold;
+            }
             p:first-child {
                 background-color: #9356DC;
                 display: flex;
@@ -244,17 +253,14 @@ button {                                /* Boutons "Commander" */
                 align-items: center;
                 position: relative;
                 right: 13px;
-                font-size: 15px;
+                
                 padding: 7px;
                 width: 10px;
                 height: 10px;
                 border-radius: 50%;
                 color: white;
             }
-            p:nth-child(3) {
-                font-size: 16px;
-                font-weight: bold;
-            }
+            
         }
     }
     
@@ -317,9 +323,10 @@ button {                                /* Boutons "Commander" */
             gap: 3px;
             justify-content: center;
             padding-left: 10px;
+            font-size: 17px;
             h3, p {
                 margin: 0px;
-                font-size: 17px;
+                
             }
         }
         > div {              /* Bouton "J'aime" */
@@ -330,7 +337,6 @@ button {                                /* Boutons "Commander" */
             position: relative;
             i {
                 font-size: 25px;
-                padding: 5px;
             }
             .fa-solid {         /* Le coeur rose est invisible par défault */
                 opacity:0;
